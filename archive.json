@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-22T00:19:12.937305+00:00",
+  "timestamp": "2023-08-24T00:19:00.991863+00:00",
   "repo": "ounsworth/acme-auto-discovery",
   "labels": [
     {
@@ -49,6 +49,31 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOJ35-HM5vEHqq",
+      "title": "Add security considerations about checking ACME 'url'",
+      "url": "https://github.com/ounsworth/acme-auto-discovery/issues/1",
+      "state": "CLOSED",
+      "author": "ounsworth",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Corey Bonnell pointed out that because this scheme will result in ACME clients creating new accounts more frequently than they do now, there is greater potential for MitM attacks where an attacker intercepts ACME new-account reqs and replaces the account key with their own; then they have full control of the ACME account.\r\n\r\nThe only real prevention of this is for CAs to be diligent about checking the \"url\" ACME JWT header and make sure that it matches the CA / ACME server's public URL.\r\n\r\nhttps://www.rfc-editor.org/rfc/rfc8555.html#section-6.4.1",
+      "createdAt": "2023-08-23T13:33:13Z",
+      "updatedAt": "2023-08-23T17:00:44Z",
+      "closedAt": "2023-08-23T17:00:44Z",
+      "comments": [
+        {
+          "author": "ounsworth",
+          "authorAssociation": "OWNER",
+          "body": "I moved this issue to Paul's fork:\r\nhttps://github.com/vanbroup/acme-auto-discovery/issues/17",
+          "createdAt": "2023-08-23T17:00:42Z",
+          "updatedAt": "2023-08-23T17:00:42Z"
+        }
+      ]
+    }
+  ],
   "pulls": []
 }
